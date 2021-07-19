@@ -1,6 +1,9 @@
-/*.myimage {*/
-/*    text-align: center;*/
-/*}*/
+.myimage {
+    text-align: center;
+}
 img {
     border-radius: 50%;
+}
+.row1 {
+    background-image: ;
 }
