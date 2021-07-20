@@ -3,7 +3,7 @@ img {
     border-radius: 50%;
 }
 .row1 {
-   height: 300px;
+   height: auto;
     width: 100%;
     background-color: slategray;
     text-align: center;
