@@ -1,9 +1,31 @@
-.myimage {
-    text-align: center;
-}
+
 img {
     border-radius: 50%;
 }
 .row1 {
-    background-image: ;
+   height: 300px;
+    width: 100%;
+    background-color: slategray;
+    text-align: center;
 }
+
+.row2 #list {
+    counter-reset: gradient-counter;
+    list-style: none;
+    margin: 1.75rem 0;
+    padding-left: 1rem;
+}
+
+li {
+    background: white;
+    border-radius: 0 0.5rem 0.5rem 0.5rem;
+    counter-increment: gradient-counter;
+    margin-top: 1rem;
+    min-height: 0.2rem;
+    padding: 1rem 1rem 0rem 3rem;
+}
+
++ li {
+    margin-top: 2rem;
+}
+
