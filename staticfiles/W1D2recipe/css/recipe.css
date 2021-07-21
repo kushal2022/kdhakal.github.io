@@ -55,3 +55,4 @@ html {
 }
 
 ul { list-style-image: url('../../../staticfiles/W1D2recipe/images/favicon.png'); }
+span.strike{text-decoration: line-through}
