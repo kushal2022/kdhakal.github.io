@@ -15,9 +15,6 @@ body {
 a {
     text-decoration: none;
 }
-{
-
-}
 .description1 p{ display: inline-block; margin:1em; }
 .description1 p{
     transform: scale(1, -1); }
