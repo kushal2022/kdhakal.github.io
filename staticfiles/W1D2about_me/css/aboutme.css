@@ -59,6 +59,7 @@ body {
 body, html {
     width: 1024px;
     height: 768px;
+    margin-left: 50px;
 }
 
 footer {
