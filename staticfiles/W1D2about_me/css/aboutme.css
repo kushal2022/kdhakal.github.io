@@ -69,3 +69,16 @@ footer {
 .copyright {
     text-align: center;
 }
+
+.row3 {
+    border-top: 3px solid white;
+}
+
+.column1 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 50vh;
+    border-left: 3px solid white;
+    border-right: 3px solid white;
+}

@@ -1,0 +1,17 @@
+body {
+    background: lightslategray;
+}
+.about{
+    color: aquamarine;
+}
+.description{
+    color: white;
+    border-bottom: 2px solid darkgray;
+}
+.list{
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}

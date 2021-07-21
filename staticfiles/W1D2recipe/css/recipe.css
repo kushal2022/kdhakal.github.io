@@ -1,0 +1,58 @@
+.row1 {
+    text-align: center;
+    background: darkgray;
+    text-decoration: underline;
+    color: darkolivegreen;
+    height: 5vh;
+    width: 100%;
+    margin-bottom: 1vh;
+}
+.description {
+    border-bottom: 2px solid black;
+}
+.row2 #pie_img {
+    height: 10vh;
+    weight: 12vh;
+}
+.description {
+    text-align: left;
+}
+.top_header{
+    margin-bottom: 200px;
+}
+
+.header {
+    text-align: left;
+    background: darkgray;
+    text-decoration: underline;
+    color: darkolivegreen;
+    height: 5vh;
+    width: 100%;
+}
+.user_comment {
+    margin-left: 20vh;
+    margin-right: 20vh;
+    background: goldenrod;
+}
+.comment {
+    border-bottom: 20px solid white;
+}
+.validate {
+    text-align: left;
+}
+.pie_img{
+    padding-top: 20vh;
+}
+body, html {
+    height: 100%;
+}
+
+html {
+    background: url('../../../staticfiles/W1D2recipe/images/silverware.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+ul { list-style-image: url('../../../staticfiles/W1D2recipe/images/favicon.png'); }
