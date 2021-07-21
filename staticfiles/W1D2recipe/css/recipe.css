@@ -10,10 +10,6 @@
 .description {
     border-bottom: 2px solid black;
 }
-.row2 #pie_img {
-    height: 10vh;
-    weight: 12vh;
-}
 .description {
     text-align: left;
 }
