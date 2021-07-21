@@ -43,7 +43,8 @@
     padding-top: 20vh;
 }
 body, html {
-    height: 100%;
+    width: 1024px;
+    height: 768px;
 }
 
 html {
