@@ -32,3 +32,15 @@ ol {
     display: flex;
     flex-direction: column-reverse;
 }
+footer {
+    height: 7vh;
+    background: slategray;
+}
+
+.validate {
+    text-align: end;
+}
+
+.copyright {
+    text-align: center;
+}

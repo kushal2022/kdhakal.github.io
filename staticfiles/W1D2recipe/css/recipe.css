@@ -36,8 +36,17 @@
 .comment {
     border-bottom: 20px solid white;
 }
+footer {
+    height: 7vh;
+    background: slategray;
+}
+
 .validate {
-    text-align: left;
+    text-align: end;
+}
+
+.copyright {
+    text-align: center;
 }
 .pie_img{
     padding-top: 20vh;
@@ -55,3 +64,6 @@ html {
 ul { list-style-image: url('../../../staticfiles/W1D2recipe/images/favicon.png'); }
 
 span.strike{text-decoration: line-through}
+pre{
+    text-align: end;
+}
