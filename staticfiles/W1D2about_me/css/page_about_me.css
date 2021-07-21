@@ -1,12 +1,12 @@
 body {
     background: lightslategray;
-    margin-left: 30px;
+    margin-left: 200px;
     margin-right: 30px;
 }
 .about{
     color: aqua;
 }
-.description{
+.description1{
     color: white;
     border-bottom: 2px solid darkgray;
 }
