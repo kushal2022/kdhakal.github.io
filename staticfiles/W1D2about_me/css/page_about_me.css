@@ -1,5 +1,7 @@
 body {
     background: lightslategray;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 .about{
     color: aquamarine;
@@ -14,6 +16,7 @@ body {
 
 a {
     text-decoration: none;
+    color: white;
 }
 .description1 p{ display: inline-block; margin:1em; }
 .description1 p{
