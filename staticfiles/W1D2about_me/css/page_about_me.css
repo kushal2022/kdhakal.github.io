@@ -15,4 +15,15 @@ body {
 a {
     text-decoration: none;
 }
-.description1
+{
+
+}
+.description1 p{ display: inline-block; margin:1em; }
+.description1 p{
+    transform: scale(1, -1); }
+.description1 p::first-letter{font-size: 30px;}
+
+ol {
+    display: flex;
+    flex-direction: column-reverse;
+}
