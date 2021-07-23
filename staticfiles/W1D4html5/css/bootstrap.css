@@ -1,8 +1,18 @@
+* {
+    box-sizing: border-box;
+}
 header{
+    height: 16vh;
+    padding-top: 5vh;
     background-color: #ADD8E6;
 }
 
-nav, footer{
+nav{
+    color: white;
+    background-color: #2F4F4F;
+}
+
+footer{
     color: white;
     background-color: #2F4F4F;
 }
