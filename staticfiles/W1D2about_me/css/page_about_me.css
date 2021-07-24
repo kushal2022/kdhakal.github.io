@@ -1,10 +1,16 @@
 body {
-    background: lightslategray;
+    background: #A2B964;
     margin-left: 50px;
     margin-right: 30px;
 }
 .about{
     color: aqua;
+}
+.row1 {
+    background: slategray;
+}
+.row2, .row3, .row4, .row5 {
+    background: #2F4F4F;
 }
 .description1{
     color: white;

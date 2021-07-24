@@ -1,7 +1,9 @@
 * {
     box-sizing: border-box;
 }
-
+.grid-container{
+    grid-template-areas: "head" "col" "foot";
+}
 .grid-container > div {
     text-align: center;
     padding: 0;
@@ -14,12 +16,13 @@
     color: gray;
 }
 .column{
+    grid-area: col;
     display: flex;
     flex-wrap: wrap;
 }
 .menu-item{
     padding-top: 3vh;
-    font-size: 20px;
+    font-size: 18px;
     color:white;
     height: 10vh;
     width: 7%;
@@ -48,13 +51,14 @@
     padding-top: 7vh;
     font-size: 30pt;
     font-width: bold;
-
 }
 .header-box{
+    grid-area: head;
     background-color: rgb(173, 216, 230);
     height: 20vh;
 }
 .menu-bar{
+    grid-area: men;
     text-align: center;
     height: 10vh;
     background-color: rgb(47, 79, 79);
@@ -64,16 +68,10 @@
     color:white;
 }
 .footer-bar{
+    grid-area: foot;
     text-align: center;
     height: 15vh;
     background-color: rgb(47, 79, 79);
 }
 
-.header { grid-area: header; }
-.menu1 { grid-area: menu; }
-.menu2 { grid-area: menu; }
-.menu3 { grid-area: menu; }
-.column1 { grid-area: column1; }
-.column2 { grid-area: column2; }
-.column3 { grid-area: column3; }
-.footer { grid-area: footer}
+
