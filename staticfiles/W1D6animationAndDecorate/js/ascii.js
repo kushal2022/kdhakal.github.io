@@ -1,3 +1,4 @@
+import ANIMATIONS from "../js/animation.js";
 "use strict";
 var textArea, animDdl, sizeDdl, timer, startButton, stopButton, speed = 250, turboChk;
 
@@ -14,9 +15,9 @@ function start() {
     })();
     stopButton.disabled = false;
     startButton.disabled = true;
-};
+}
 
-function stop(time) {
+function stop() {
     stopButton.disabled = true;
     startButton.disabled = false;
     clearTimeout(timer);
@@ -58,5 +59,4 @@ window.onload = function () {
     animDdl.onchange = getFrames;
     sizeDdl.onchange = setSize;
     turboChk.onchange = turbo;
-
 }
