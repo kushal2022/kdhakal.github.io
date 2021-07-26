@@ -78,3 +78,8 @@ footer {
 .copyright {
     text-align: center;
 }
+
+@media screen and (min-width: 600px) {
+    .column1 {width: 500px; float: left;}
+    .column2 {margin-left: 10px;}
+}

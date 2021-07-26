@@ -83,6 +83,17 @@
             return maxLength;
         }
 
+        function shortestString(word1, word2, word3) {
+            if(word1.length < word2.length && word1.length < word3.length){
+               return word1;
+            } else if(word2.length < word1.length && word2.length < word3.length){
+                return word2
+            }else{
+                return word3;
+            }
+        }
+        console.log(shortestString("hello", "hi", "bye"));
+
         /*finding long words than given length*/
         function findLongWords(words, length) {
             const longWords = [];
