@@ -45,6 +45,8 @@ body {
 }
 
 .column1 {
+    display: flex;
+    flex-font: column wrap;
     float: left;
     width: 50%;
     padding: 10px;
