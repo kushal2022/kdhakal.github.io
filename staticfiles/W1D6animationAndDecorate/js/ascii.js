@@ -1,8 +1,7 @@
-import ANIMATIONS from "../js/animation.js";
+"use strict";
 var textArea, animDdl, sizeDdl, timer, startButton, stopButton, speed = 250, turboChk;
 
 function start() {
-    "use strict";
     var frames = textArea.value.split("=====\n");
     var i = 0, l = frames.length;
     (function iterator() {
@@ -15,10 +14,9 @@ function start() {
     })();
     stopButton.disabled = false;
     startButton.disabled = true;
-}
+};
 
-function stop() {
-    "use strict";
+function stop(time) {
     stopButton.disabled = true;
     startButton.disabled = false;
     clearTimeout(timer);
@@ -27,20 +25,17 @@ function stop() {
 
 
 function getFrames() {
-    "use strict";
     var dropSel = animDdl.options[animDdl.selectedIndex].innerHTML;
     textArea.value = ANIMATIONS[dropSel];
 
 }
 
 function setSize() {
-    "use strict";
     var fontsize = sizeDdl.options[sizeDdl.selectedIndex].value;
     textArea.style.fontSize = fontsize;
 }
 
 function turbo() {
-    "use strict";
     if (turboChk.checked) {
         speed = 50;
     }
@@ -50,7 +45,6 @@ function turbo() {
 }
 
 window.onload = function () {
-    "use strict";
     textArea = document.getElementById("text-area");
     animDdl = document.getElementById("animation");
     sizeDdl = document.getElementById("fontsize");
@@ -64,4 +58,5 @@ window.onload = function () {
     animDdl.onchange = getFrames;
     sizeDdl.onchange = setSize;
     turboChk.onchange = turbo;
-};
+
+}
