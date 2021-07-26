@@ -2,6 +2,7 @@
 var textArea, animDdl, sizeDdl, timer, startButton, stopButton, speed = 250, turboChk;
 
 function start() {
+    // var frames = textArea.val().split("=====\n");
     var frames = textArea.value.split("=====\n");
     var i = 0, l = frames.length;
     (function iterator() {
@@ -16,7 +17,7 @@ function start() {
     startButton.disabled = true;
 };
 
-function stop() {
+function stop(time) {
     stopButton.disabled = true;
     startButton.disabled = false;
     clearTimeout(timer);
@@ -31,8 +32,7 @@ function getFrames() {
 }
 
 function setSize() {
-    var fontsize = sizeDdl.options[sizeDdl.selectedIndex].value;
-    textArea.style.fontSize = fontsize;
+    textArea.style.fontSize = sizeDdl.options[sizeDdl.selectedIndex].value;
 }
 
 function turbo() {
@@ -59,4 +59,4 @@ window.onload = function () {
     sizeDdl.onchange = setSize;
     turboChk.onchange = turbo;
 
-}
+};

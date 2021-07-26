@@ -1,54 +1,55 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+    <title>W2D1 Quiz</title>
     <meta charset="utf-8">
-    <title>This is form in flex.</title>
-    <style>
-        #container{
-           display: grid;
-            grid-template-columns: 300px;
-            grid-gap: 10px;
-            max-width: 400px;
-        }
-        .label{
-            padding: 5px;
-        }
 
-        input{
-            margin-left: 10px;
-        }
-        option{
-            color: #9d9d9d;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+    <script>
+        // initialize mocha
+        mocha.setup('bdd');
+        // chai has a lot of stuff, let's make assert global
+        let assert = chai.assert;
+
+    </script>
+
+    <script>
+       function earliestSpace(string1, string2, string3) {
+           const a = string1.split(" ");
+           const b = string2.split(" ");
+           const c = string3.split(" ");
+
+           if(a[0].length < b[0].length && a[0].length < c[0].length) {
+               return string1;
+           } else if(b[0].length < a[0].length && b[0].length < c[0].length) {
+               return string2;
+           } else {
+               return string3;
+           }
+       }
+    </script>
+    <script>
+        describe("earliestSpace", function () {
+            it("takes 3 strings, and returns whicherver string has a space character at the lowest index",
+                function () {
+                    assert.equal("bla bla bla", earliestSpace("This is a test", "Where it checks for spaces hello",
+                        "bla bla bla"));
+                });
+        });
+
+    </script>
 </head>
+
 <body>
-  <form>
-      <fieldset id="container">
-          <legend>personalia</legend>
-          <div class="label">First Name:
-              <input type="text" name="first"></div>
+<div id="mocha"></div>
+<script>
+    mocha.run();
 
-          <div class="label">Last Name:
-              <input type="text" name="last"></div>
-
-          <div class="label">Email:
-              <input type="text" name="email"></div>
-
-          <div class="label">Birthday:
-              <input type="date" name="birthday"></div>
-
-          <div class="label">Favorite food:
-              <select name = "food">
-
-                      <option>Pizza</option>
-                      <option>Ice cream</option>
-                      <option>Burger and Fries</option>
-              </select>
-          </div>
-
-          <input type="submit" value="Submit" style="width: 100px;">
-      </fieldset>
-  </form>
+</script>
 </body>
+
 </html>
+
