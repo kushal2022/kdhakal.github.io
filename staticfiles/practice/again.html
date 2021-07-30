@@ -1,51 +1,122 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+
+<!--<head>-->
+<!--    <title>W2D2 Quiz</title>-->
+<!--    <meta charset="utf-8">-->
+
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>-->
+<!--    <script>-->
+<!--        // initialize mocha-->
+<!--        mocha.setup('bdd');-->
+<!--        // chai has a lot of stuff, let's make assert global-->
+<!--        let assert = chai.assert;-->
+
+<!--    </script>-->
+
+<!--    <script>-->
+<!--        // write your code for the function longestNoSapce() here-->
+<!--        // remember it can take any amount of strings!-->
+<!--        function longestNoSpace(...args) {-->
+<!--            return args.filter(word => word.indexOf(" ") < 0)-->
+<!--                .map(word => word.length)-->
+<!--                .reduce(((a, b) => a > b ? a : b), 0);-->
+<!--        }-->
+<!--    </script>-->
+<!--    <script src="code.js"></script>-->
+<!--    <script>-->
+<!--        describe("longestNoSpace", function () {-->
+<!--            it("returns 0 if given zero parameters", () => {-->
+<!--                assert.equal(longestNoSpace(), 0);-->
+<!--            });-->
+<!--            it("returns 0 if given a single string that contains a space", () => {-->
+<!--                assert.equal(longestNoSpace("a test"), 0);-->
+<!--            })-->
+<!--            it("returns 0 if given only strings that contains spaces", () => {-->
+<!--                assert.equal(longestNoSpace("this is","a test"), 0);-->
+<!--            });-->
+<!--            it("returns the length of the string if given a single string without a space", () => {-->
+<!--                assert.equal(longestNoSpace("hello hello"), 0);-->
+<!--            });-->
+<!--            it("returns the length of the longest string if given multiple strings without spaces", () => {-->
+<!--                assert.equal(longestNoSpace("hello hello", "world!"), 6);-->
+<!--            });-->
+<!--        });-->
+
+<!--    </script>-->
+<!--</head>-->
+
+<!--<body>-->
+<!--<div id="mocha"></div>-->
+<!--<script>-->
+<!--    mocha.run();-->
+
+<!--</script>-->
+<!--</body>-->
+
+<!--</html>-->
+
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>W2D1 Quiz</title>
-    <meta charset="utf-8">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
-    <script>
-        // initialize mocha
-        mocha.setup('bdd');
-        // chai has a lot of stuff, let's make assert global
-        let assert = chai.assert;
-
-    </script>
-
-    <script>
-       function earliestSpace(string1, string2, string3) {
-           a = string1.split(" ");
-           b = string2.split(" ");
-           c = string3.split(" ");
-
-           if() {
-               return strin1;
-           }
-       }
-    </script>
-    <script>
-        describe("earliestSpace", function () {
-            it("takes 3 strings, and returns whicherver string has a space character at the lowest index",
-                function () {
-                    assert.equal("bla bla bla", earliestSpace("This is a test", "Where it checks for spaces hello",
-                        "bla bla bla"));
-                });
-        });
-
-    </script>
+    <title>W2D4 Q2</title>
+    <meta charset="utf8">
 </head>
-
 <body>
-<div id="mocha"></div>
+<form id="myForm" method="POST">
+    <input type="text" name="first" id="first" placeholder="First Name" /> <br />
+    <input type="text" name="last" id="last" placeholder="Last Name" /> <br />
+    <input type="submit"/>
+</form>
 <script>
-    mocha.run();
+    var VALIDATOR = (
+        function() {
+            var firstName, lastName;
+            var flag = true;
+            function validateFirstName(){
+                if(getFirstName() === ""){
+                    flag = false;
+                }
+                return flag;
+            };
+            function validateLastName(){
+                if(getLastName() === ""){
+                    flag = false;
+                }
+                return flag;
+            }
+            function getFirstName() {
+                return firstName;
+            }
+            function getLastName() {
+                return lastName;
+            }
 
+            function setFirstName(fName) {
+                firstName = fName;
+            }
+            function setLastName(lName) {
+                lastName = lName;
+            }
+            function validate(fName, lName){
+                setFirstName(fName);
+                setLastName(lName);
+                return validateFirstName() && validateLastName();
+            }
+            return {
+                validateMethod: validate
+            }
+        }
+    )();
+     var first = document.getElementById("first").value;
+    var last = document.getElementById("last").value;
+
+    VALIDATOR.validateMethod(first, last);
+
+    window.onload(onSubmit().validateMethod(first, last));
+</script>
 </script>
 </body>
-
 </html>
-
