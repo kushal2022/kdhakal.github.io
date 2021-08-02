@@ -16,7 +16,7 @@ describe("teach", function () {
     it("Returns the teacher name and her teaching course name",
         function () {
             let teacher = new Teacher();
-            teacher.initialize("Undral", 25);
+            teacher.initialize("Kushal", 25);
             assert.equal(teacher.teach("WAP"),  `${teacher.name} is now teaching WAP`);
         });
 });

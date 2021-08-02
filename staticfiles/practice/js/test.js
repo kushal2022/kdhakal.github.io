@@ -1,9 +1,112 @@
-const string = "hello i am kushal";
-const stringArray = string.split(' ');
-console.log(stringArray);
-console.log(stringArray[2]);
+//using class
+/* class solution uses _ convention to indicate the _contacts property should be considered private
+ */
+class MakeContacts {
+    constructor() {
+        this._contacts = [];
+    }
 
-function filter(...bannedWords) {
-    console.log(bannedWords.length);
+    keepContacts(name) {
+        let aContact = this._contacts.find(contact => (contact.name === name) ? true : false);
+        if (aContact !== undefined) {
+            return aContact.phone;
+        } else {
+            this._contacts.push({
+                name: name,
+                phone: prompt("Please enter phone number: ")
+            });
+        }
+    }
+
 }
-"this is good to filter".filter("is");
+// test it
+const myContacts = new MakeContacts();
+myContacts.keepContacts("Bill");
+myContacts.keepContacts("Bob");
+console.log("should find number for bill: " + myContacts.keepContacts("Bill"));
+console.log("can access the _contacts in class:  ");
+console.log(myContacts._contacts);
+
+
+//using revealing module
+
+/* revealing module pattern (module factory variant) */
+function makeContacts() {
+
+    let contacts = [];
+
+    function keepContacts(name) {
+        let aContact = contacts.find(contact => (contact.name === name) ? true : false);
+        if (aContact !== undefined) {
+            return aContact.phone;
+        } else {
+            contacts.push({
+                name: name,
+                phone: prompt("Please enter phone number: ")
+            });
+        }
+    }
+    return {
+        keepContacts:  keepContacts
+    }
+}
+// test it
+const myContacts = makeContacts();
+myContacts.keepContacts("Bill");
+myContacts.keepContacts("Bob");
+console.log("should find number for bill: " + myContacts.keepContacts("Bill"));
+
+/* constructor function that returns 'this' with keepContracts method.
+contacts is a private local variable of the constructor function */
+function MakeContacts() {
+
+    let contacts = [];
+    this.keepContacts = keepContacts;
+
+    function keepContacts(name) {
+        let aContact = contacts.find(contact => (contact.name === name) ? true : false);
+        if (aContact !== undefined) {
+            return aContact.phone;
+        } else {
+            contacts.push({
+                name: name,
+                phone: prompt("Please enter phone number: ")
+            });
+        }
+    }
+
+
+
+}
+// test it
+const myContacts = new MakeContacts();
+myContacts.keepContacts("Bill");
+myContacts.keepContacts("Bob");
+console.log("should find number for bill: " + myContacts.keepContacts("Bill"));
+
+//closure solution
+/* closure that returns function to manage contacts */
+function keepContacts() {
+
+    let contacts = [];
+
+    return function (name) {
+        let aContact = contacts.find(contact => (contact.name === name) ? true : false);
+        if (aContact !== undefined) {
+            return aContact.phone;
+        } else {
+            contacts.push({
+                name: name,
+                phone: prompt("Please enter phone number: ")
+            });
+        }
+    }
+
+
+
+}
+// test it
+const myContacts =  keepContacts();
+myContacts("Bill");
+myContacts("Bob");
+console.log("should find number for bill: " + myContacts("Bill"));
