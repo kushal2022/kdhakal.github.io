@@ -56,7 +56,7 @@ myContacts.keepContacts("Bill");
 myContacts.keepContacts("Bob");
 console.log("should find number for bill: " + myContacts.keepContacts("Bill"));
 
-/* constructor function that returns 'this' with keepContracts method.
+/* The class in js is similar to java. I am comfortable with class and inheritance. But there are many ways to do this like using revealing module, constructor function that returns 'this' with keepContracts method.
 contacts is a private local variable of the constructor function */
 function MakeContacts() {
 
@@ -110,3 +110,4 @@ const myContacts =  keepContacts();
 myContacts("Bill");
 myContacts("Bob");
 console.log("should find number for bill: " + myContacts("Bill"));
+
