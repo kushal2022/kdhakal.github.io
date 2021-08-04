@@ -27,7 +27,7 @@ $(document).ready(function () {
     }
 
     function drawCircles() {
-        $("form").hide();
+        // $("form").hide();
         let height = $('.main').height();
         let width = $('.main').width();
         let circleSize = parseInt($("#width").val());
