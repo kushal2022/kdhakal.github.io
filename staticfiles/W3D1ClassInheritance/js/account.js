@@ -11,11 +11,11 @@ class Account {
      *
      * @param {number} number the number for this account
      */
-    constructor(number) {
-        this._number = number; // the account number
+
+    constructor(number){
+        this._number = number;
         this._balance = 0.0;
     }
-
     /**
      * Getter for the 'private' number field
      *
