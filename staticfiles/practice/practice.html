@@ -11,23 +11,29 @@
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </head>
 <body>
-
-<form id = "helloForm">
-
-</form>
-
-
 <script>
-    $(document).ready(function () {
-        $('<input>').attr({
-            type: 'text',
-            id: 'hello',
-            name: 'hello',
-            value: 'hello world'
+    $(function() {
+        $("#textbox").on('mouseout', sayHi); // bound to text box here
+        $("#submitBtn").on('click', sayHii); // bound to submit button here
+    }); //if use ‘on’ dynamically generated items also get handler
+    function sayHi() {
+// sayHi knows what object it was called on
+        $("#example").html("it is mouse out.");
+        console.log(this.id);
+    }
+    function sayHii() {
+// sayHi knows what object it was called on
+        $("#example").html("it is submit button.");
+        console.log(this.id);
+    }
 
-        }).appendTo('#helloForm');
-    });
 </script>
+
+<div class="exampleoutput">
+    <p id="example"> hello it is start!!</p>
+    <input id="textbox" />
+    <input type="submit" id="submitBtn" value="Save">
+</div>
 
 </body>
 </html>

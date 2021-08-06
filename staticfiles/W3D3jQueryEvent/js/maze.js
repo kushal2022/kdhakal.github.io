@@ -18,11 +18,10 @@
 //         flag = true;
 //         $(".boundary").css("background-color", "");
 //         $("#status").html("Move mouse to End in order to win the game");
-//         $(".boundary").mousemove();
 //     });
 //
 //     $(document).mousemove(function(e){
-//         $('#status').html(e.pageX +', '+ e.pageY);
+//         $('').html(e.pageX +', '+ e.pageY);
 //     });
 //
 //     $("#end").mouseover(function () {
@@ -30,9 +29,18 @@
 //             $("#status").html("you win!");
 //         }
 //
-//     })
+//     });
+//     $(function(){
+//
+//     });
 // });
-
+/*I like the jquery which greatly simplifies javascript programming.
+* With the help of jquery we select html elements and perform "actions" on them.
+* We also handles the jQuery events with different methods like click, hover.. etc
+* Here i used mouseover, mousemove to control the cursor.
+*
+* Here is my link:
+*  https://kushal2022.github.io/kdhakal.io/ */
 "use strict";
 
 $(document).ready(function () {
