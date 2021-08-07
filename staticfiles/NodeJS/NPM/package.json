@@ -9,7 +9,11 @@
   "author": "kushal dhakal",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "chalk": "^4.1.2",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "express-session": "^1.17.2"
   }
 }
