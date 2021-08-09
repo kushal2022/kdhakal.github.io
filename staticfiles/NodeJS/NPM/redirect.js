@@ -1,35 +1,26 @@
 const express = require("express");
-const session = require("express-session");
 const app = express();
 
 app.use(express.urlencoded( { "extended": false}));
-app.use(session({
-    "secret": "salt for cookie",
-    "resave": false,
-    "saveUninitialized": false,
-}));
+
+var arr = [];
+
 app.get("/", (req, res) => {
-    res.send(`<a href='add'>Add to session</a> <br>
-            <a href='view'>View session</a>`);
+    let view = "<ul>";
+    for (let key of arr) {
+        view += `<li>${key}</li>`
+    }
+    res.send(`${view} <br> <a href='add'>Add</a>`);
 });
 app.get("/add", (req, res) => {
     res.send(`<form method='POST'>
               <input name='key'>
-              <input name='value'>
               <input type='submit'>
             </form>`);
 });
-app.get("/view", (req, res) => {
-    let view = "<ul>";
-    for (const key in req.session) {
-        if (key === 'cookie') continue;
-        view += `<li>${key}: ${req.session[key]}</li>`;
-    }
-    view += "</ul><a href='/'>back</a>";
-    res.send(view);
-});
-app.post("/add", (req, res) => {
-    req.session[req.body.key] = req.body.value;
-    res.redirect(303, "/view");
-});
+
+app.post('/add', (req, res) => {
+    arr.push(req.body.key);
+    res.redirect('/');
+})
 app.listen(3001);

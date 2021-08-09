@@ -1,0 +1,15 @@
+{
+  "name": "question3_4",
+  "version": "1.0.0",
+  "description": "this is question3 and 4",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kushal dhakal",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
+}

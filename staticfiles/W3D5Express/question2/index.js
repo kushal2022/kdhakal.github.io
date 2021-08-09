@@ -8,7 +8,6 @@ app.use(express.urlencoded({
 app.get('/', (req, res) => {
     res.send("<form method='post' action='result'>" +
         "<label>Name <input type='text' name='name'></label>" +
-    "<label>Age <input type='text' name='age'></label>" +
     "<button type='submit'>Submit Query</button>");
 });
 
