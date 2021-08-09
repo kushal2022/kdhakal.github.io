@@ -12,11 +12,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, "view"));
 
 app.get('/', (req, res) => {
-    res.send(`<form method="post" action="result">
-        Name <input name="name">
-        Age <input name="age">
-        <input type="submit">
-    </form>`);
+    res.render('form');
 });
 app.post('/result', (req, res) => {
     let name = req.body.name;
