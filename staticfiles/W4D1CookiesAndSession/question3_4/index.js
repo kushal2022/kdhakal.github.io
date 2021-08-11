@@ -19,7 +19,7 @@ app.use(session({
 const PRODUCTS = [
     { id: 1, name: 'Product 1', description: 'Description', price: 3000 },
     { id: 2, name: 'Product 2', description: 'Description', price: 5000 },
-    { id: 3, name: 'Product 3', description: 'Description', price: 7000 }]
+    { id: 3, name: 'Product 3', description: 'Description', price: 7000 }];
 
 
 app.use(function (req, res, next) {
@@ -69,5 +69,49 @@ app.get('/cart', (req, res, next) => {
     });
 });
 
+
+app.listen(3000);
+
+/*
+* I learned about express framework with ejs template which helps us with a lot of
+* functionality to more easily make web applications. It helps in the following field
+* like parsing requests and sending responses, routing, managing data.
+*
+*here i used cookies and session to stored data.
+*
+* here is my github link:
+* https://github.com/kushal2022/kdhakal.io/tree/main/staticfiles/W4D1CookiesAndSession/
+*/
+
+const express = require("express");
+const session = require("express-session");
+const path = require("path");
+const app = express();
+
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "public", "view"));
+app.use(express.urlencoded({ extended: true }));
+
+app.use(session({ secret: "!901XOco", resave: true }));
+
+app.use((req, res, next) => {
+    if (!req.session.list) {
+        req.session.list = [];
+    }
+    next();
+});
+
+app.get("/", (req, res) => {
+    res.render("homepage", { list: req.session.list });
+});
+
+app.get("/add", (req, res) => {
+    res.render("form");
+});
+
+app.post("/add", (req, res) => {
+    req.session.list.push(req.body.item);
+    res.redirect(303, "/");
+});
 
 app.listen(3000);
