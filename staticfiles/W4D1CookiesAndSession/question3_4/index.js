@@ -115,3 +115,14 @@ app.post("/add", (req, res) => {
 });
 
 app.listen(3000);
+
+/*
+* I learned about express framework with ejs template which helps us with a lot of
+* functionality to more easily make web applications. It helps in the following field
+* like parsing requests and sending responses, routing, managing data.
+*
+*here i used json file system and session to store dta
+*
+* here is my github link:
+* https://github.com/kushal2022/kdhakal.io/tree/main/staticfiles/W4D2AjaxAndJson/
+*/

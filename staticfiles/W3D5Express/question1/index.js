@@ -5,10 +5,10 @@ app.get('/', (req, res) => {
     let name = req.query.name;
     let age = req.query.age;
     if(!name) {
-        name = 'kushal';
+        name = 'unknown';
     }
     if(!age) {
-        age = 23;
+        age = 'unknown';
     }
     res.send('Welcome! ' + name + ' and your age is ' + age);
 });

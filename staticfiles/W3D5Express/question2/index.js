@@ -11,11 +11,14 @@ app.get('/', (req, res) => {
     "<button type='submit'>Submit Query</button>");
 });
 
-app.use('/result', (req, res) => {
-    let name = req.body.name;
-    let age = req.body.age;
+app.post('/', (req, res) => {
+    res.redirect(303,'/result', {
+        name: req.body.name,
+    });
+})
 
-    res.send('Welcome! ' + name + ' and your age is ' + age);
+app.use('/result', (req, res) => {
+    res.send('Welcome! ' + name);
 });
 
 app.listen(3003);
